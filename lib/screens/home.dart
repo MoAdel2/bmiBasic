@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Text('What is BMI?'),
+            Text('What is BMI?', style: TextStyle(color: accentHexColor)),
             SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
