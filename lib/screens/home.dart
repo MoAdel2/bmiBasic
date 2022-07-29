@@ -14,6 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   TextEditingController _weightController = TextEditingController();
   double _bmiResult = 0;
   String _textResult = "";
+  String _image = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,10 +80,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   _bmiResult = _w / (_h * _h);
                   if (_bmiResult > 25) {
                     _textResult = "you're over weight";
+                    _image = 'images/overWeight';
                   } else if (_bmiResult >= 18.5 && _bmiResult <= 25) {
                     _textResult = "you have a normal weight";
+                    _image = 'images/normalWeight.jpg';
                   } else {
                     _textResult = "You're under Weight";
+                    _image = 'images/underWeight.jpg';
                   }
                 });
               },
@@ -104,12 +108,21 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 10),
             Visibility(
               visible: _textResult.isNotEmpty,
-              child: Container(
-                child: Text(
-                  _textResult,
-                  style: TextStyle(color: accentHexColor, fontSize: 15, fontWeight: FontWeight.w400),
+              child: Column(children: [
+                Container(
+                  child: Text(
+                    _textResult,
+                    style: TextStyle(color: accentHexColor, fontSize: 15, fontWeight: FontWeight.w400),
+                  ),
                 ),
-              ),
+                Container(
+                  child: Image.asset(
+                    _image,
+                    height: 60,
+                    width: 60,
+                  ),
+                ),
+              ]),
             ),
             SizedBox(height: 10),
             LeftBar(barWidth: 40),
