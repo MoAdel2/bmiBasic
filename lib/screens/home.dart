@@ -4,6 +4,8 @@ import 'package:bmi/constants/app_constants.dart';
 import 'package:bmi/widgets/left_bar.dart';
 import 'package:bmi/widgets/right_bar.dart';
 
+import 'bmiMeaning.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
   _HomeScreenState createState() => _HomeScreenState();
@@ -31,7 +33,16 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Text('What is BMI?', style: TextStyle(color: accentHexColor)),
+            GestureDetector(
+              child: Text('What is BMI?', style: TextStyle(color: accentHexColor)),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (v) {
+                    return Info();
+                  },
+                ));
+              },
+            ),
             SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
