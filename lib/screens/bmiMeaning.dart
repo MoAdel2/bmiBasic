@@ -11,6 +11,8 @@ class Info extends StatelessWidget {
     // );
     return SafeArea(
       child: Container(
+        padding: EdgeInsets.all(20),
+        margin: EdgeInsets.all(20),
         child: Text(
           'Body mass index. A measure that relates body weight to height.\n BMI is sometimes used to measure total body fat and whether a person is a healthy weight. Excess body fat is linked to an increased risk of some diseases including heart disease and some cancers. Also called body mass index.',
           style: TextStyle(
