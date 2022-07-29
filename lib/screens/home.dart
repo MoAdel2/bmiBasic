@@ -115,12 +115,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(color: accentHexColor, fontSize: 15, fontWeight: FontWeight.w400),
                   ),
                 ),
-                Container(
-                  child: Image.asset(
-                    _image,
-                    height: 60,
-                    width: 60,
-                  ),
+                Image.asset(
+                  _image,
+                  height: 200,
+                  width: 150,
                 ),
               ]),
             ),
