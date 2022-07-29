@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   _bmiResult = _w / (_h * _h);
                   if (_bmiResult > 25) {
                     _textResult = "you're over weight";
-                    _image = 'images/overWeight';
+                    _image = 'images/overWeight.jpg';
                   } else if (_bmiResult >= 18.5 && _bmiResult <= 25) {
                     _textResult = "you have a normal weight";
                     _image = 'images/normalWeight.jpg';
